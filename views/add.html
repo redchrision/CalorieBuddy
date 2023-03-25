@@ -1,0 +1,64 @@
+<!--Add Food Page-->
+<!--This implements the R3: Add food page-->
+
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--This changes the title of the webpage from static to dynamic, together with the corresponding res.render() function from main.js.-->
+<title> <%= title %> </title>
+
+<head>
+
+ <!--Navbar-->
+ <!--This implements second part of the R3A: Display a link to the home page or a navigation bar that contains links to other pages.-->
+
+ <body>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="./index">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./about">About</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="./add">Add Food</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./search">Search Food</a>
+          </li>
+        <li class="nav-item">
+        <a class="nav-link" href="./update">Update Food</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./list">List Food</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <h1 class="display-6 text-center"> Add food items to CalorieBuddy</h1>
+
+  <!--This form implements the first part of R3A: Display a form to users to add a new food item to the database. 
+    The form should consist of the following items: name, typical values, unit of the typical value, calories, carbs, fat, protein, salt, and sugar.-->
+
+    <form method="POST" action="/topic7/mid-term/registered" style="text-align: center; margin-top: 10px;"> 
+      <input name="name" type="text" placeholder="Name of food (e.g. flour)" style="text-align: center; width: 30%"><br>
+      <input name="typical_values" type="text" placeholder="Typical values per (e.g. 100)" style="text-align: center; width: 30%"><br>
+      <input name="unit_of_typical_value" type="text" placeholder="Unit of typical value (e.g. gram)" style="text-align: center; width: 30%"><br>
+      <input name="calories" type="text" placeholder="Calories / kilocalories (e.g. 381)" style="text-align: center; width: 30%"><br>
+      <input name="carbs" type="text" placeholder="Carbs (e.g. 81)" style="text-align: center; width: 30%"><br>
+      <input name="fat" type="text" placeholder="Fat (e.g. 1.4)" style="text-align: center; width: 30%"><br>
+      <input name="protein" type="text" placeholder="Protein (e.g. 9.1)" style="text-align: center; width: 30%"><br>
+      <input name="salt" type="text" placeholder="Salt (e.g. 0.01)" style="text-align: center; width: 30%"><br>
+      <input name="sugar" type="text" placeholder="Sugar (e.g. 0.06)" style="text-align: center; width: 30%"><br>
+      <input type="submit" value="Add Food Item" style="margin-top: 20px; width:15%"/>
+    </form>
+
+  </body>

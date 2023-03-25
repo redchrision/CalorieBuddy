@@ -1,0 +1,93 @@
+<!--Homepage-->
+
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--This changes the title of the webpage from static to dynamic, together with the corresponding res.render() function from main.js..-->
+<title> <%= title %> </title>
+ </head>
+ <body>
+
+<!--Navbar-->
+<!--This implement the R6B requirement: Display a link to the home page or a navigation bar that contains links to other pages.-->
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="./index">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./add">Add Food</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./search">Search Food</a>
+          </li>
+        <li class="nav-item">
+        <a class="nav-link" href="./update">Update Food</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="./list">List Food</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <h1 class="display-4 text-center"> Keep counting! </h1>
+
+ <p class="display-5 text-center">Here is a complete list of the food items.</p>
+
+<!--This implements the R6A requirement: Display all foods stored in the database including name, typical values, unit of the
+typical value, calories, carbs, fat, protein, salt, and sugar, sorted by name.-->
+ <% if(data.length) { %>
+  <table class="table">
+      <thead>
+          <tr>
+              <th scope="col">Item</th>
+              <th scope="col">Name</th>
+              <th scope="col">Typical values per</th>
+              <th scope="col">Unit of typical value</th>
+              <th scope="col">Calories (kilocalories)</th>
+              <th scope="col">Carbs</th>
+              <th scope="col">Fat</th>
+              <th scope="col">Protein</th>
+              <th scope="col">Salt</th>
+              <th scope="col">Sugar</th>
+          </tr>
+      </thead>
+      <tbody>
+      <% for(var i = 0; i< data.length; i++) { %>
+          <tr>
+              <th scope="row"><%= (i+1) %></th>
+              <td><%= data[i].name%></td>
+              <td><%= data[i].typical_values%></td>
+              <td><%= data[i].unit_of_typical_value%></td>
+              <td><%= data[i].calories%></td>
+              <td><%= data[i].carbs%></td>
+              <td><%= data[i].fat%></td>
+              <td><%= data[i].protein%></td>
+              <td><%= data[i].salt%></td>
+              <td><%= data[i].sugar%></td>
+          <td>
+                  <a class="btn btn-success edit" href="../food/edit/<%=data[i].id%>">Select</a>                       
+                  <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="../data/delete/<%=data[i].id%>">Delete</a>                       
+              </td>
+          </tr>
+      <% } %>
+      </tbody>
+  </table>
+  <% } %>
+  
+  <!-- if result is empty -->
+  <% if(!data.length) { %>
+      <p class="text-center">No food found!</p>
+  <% } %>
+ </body>

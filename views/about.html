@@ -1,0 +1,69 @@
+<!--About Page-->
+<!--This implements the R2 requirement: About page.-->
+
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--This changes the title of the webpage from static to dynamic, together with the corresponding res.render() function from main.js.-->
+<title> <%= title %> </title>
+
+ </head>
+ <body>
+
+<!--Navbar-->
+<!--This implements the second part of the R2A requirement: Display a link to the home page or a navigation bar that contains links to other pages.-->
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="./index">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="./about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./add">Add Food</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./search">Search Food</a>
+          </li>
+        <li class="nav-item">
+        <a class="nav-link" href="./update">Update Food</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./list">List Food</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--About Us section-->
+  
+  <!--This implements the first part of the R2A requirement: Display information about the web application including your name as the developer.-->
+
+	<section class="about-us py-3" id="about-us">
+		<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h1 class="display-4 text-center">About CalorieBuddy</h1>
+				<hr>
+				<p>CalorieBuddy is your personal application to keep track of food items, with the main aim to promote a healthy lifestyle and raising awareness about food details.</p>
+				<p>You have the possibility to add or delete foods in the database, search for food iteams, update the list as you preffer and also keep track of all its content.</p>	
+			</div>
+      <div class="col-md-6">
+				<h1 class="display-4 text-center">The Team</h1>
+				<hr>
+				<p>The developer of CalorieBuddy is Cristina DeLisle, a big enthousiast of a healthy lifestyle and currently a student at University of London pursuing a BSc Degree in Computer Science.</p>
+				<p>She believes that by being aware of the various ingredients, you will have the possiblity to be more careful about what you are eating and, as a result, make the best food choices.</p>	 	
+			</div>
+		</div>
+	</div>
+	</section>
+ </body>
+</html>
